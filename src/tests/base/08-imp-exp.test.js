@@ -1,19 +1,23 @@
 import { getHeroeById, getHeroesByOwner } from '../../base/08-imp-exp';
-import heroes from '../../data/heroes'
+import heroes from '../../data/heroes';
+
 
 describe('Pruebas en funciones de Héroes', () => {
     
-    test('debe retornar un Heroe por un id', () => {
+
+    test('debe de retornar un héroe por id', () => {
         
         const id = 1;
         const heroe = getHeroeById( id );
 
-        const heroeData = heroes.find( h => h.id === id);
+        const heroeData = heroes.find( h => h.id === id );
 
-        expect( heroe ).toEqual(heroeData);
+        expect( heroe ).toEqual( heroeData );
 
     });
-    test('debe retornar un undefined si un Heroe no existe', () => {
+
+
+    test('debe de retornar un undefined si Héroe no existe', () => {
         
         const id = 10;
         const heroe = getHeroeById( id );
@@ -22,8 +26,8 @@ describe('Pruebas en funciones de Héroes', () => {
 
     });
 
-    /// - getHeroesByOwner -
-    test('debe retornar un Arreglo con los Héroes de DC', () => {
+    // debe de retornar un arreglo con los héroes de DC
+    test('debe de retornar un arreglo con los héroes de DC', () => {
         
         const owner = 'DC';
         const heroes = getHeroesByOwner( owner );
@@ -32,18 +36,20 @@ describe('Pruebas en funciones de Héroes', () => {
 
         expect( heroes ).toEqual( heroesData );
 
-    });
-    test('debe retornar un Arreglo con los Héroes de Marvel', () => {
-        
+    })
+
+    
+    test('debe de retornar un arreglo con los héroes de Marvel', () => {
+
         const owner = 'Marvel';
         const heroes = getHeroesByOwner( owner );
 
         expect( heroes.length ).toBe( 2 );
 
-    });
+    })
+    
+    
+    
     
 
-});
-
-
-
+})
